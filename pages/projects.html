@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-gray-900 bg-gray-50 p-6">
+
+  <h1 class="text-3xl font-bold mb-6">Projects</h1>
+
+  <!-- Project Summary Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow p-5">
+      <h2 class="text-xl font-semibold">Total Projects</h2>
+      <p class="text-3xl font-bold text-blue-600 mt-2">18</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-5">
+      <h2 class="text-xl font-semibold">Active Projects</h2>
+      <p class="text-3xl font-bold text-green-600 mt-2">5</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-5">
+      <h2 class="text-xl font-semibold">Completed</h2>
+      <p class="text-3xl font-bold text-gray-600 mt-2">13</p>
+    </div>
+  </div>
+
+  <!-- Project List Table -->
+  <div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-3 font-medium text-gray-600">Project</th>
+          <th class="px-4 py-3 font-medium text-gray-600">Client</th>
+          <th class="px-4 py-3 font-medium text-gray-600">Due Date</th>
+          <th class="px-4 py-3 font-medium text-gray-600">Budget</th>
+          <th class="px-4 py-3 font-medium text-gray-600">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr>
+          <td class="px-4 py-3">Website Redesign</td>
+          <td class="px-4 py-3">Acme Corp</td>
+          <td class="px-4 py-3">2025-06-15</td>
+          <td class="px-4 py-3">$4,000</td>
+          <td class="px-4 py-3">
+            <span class="inline-block px-2 py-1 text-xs bg-yellow-100 text-yellow-700 rounded-full">In Progress</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3">E-commerce Store</td>
+          <td class="px-4 py-3">TechBros</td>
+          <td class="px-4 py-3">2025-07-01</td>
+          <td class="px-4 py-3">$8,500</td>
+          <td class="px-4 py-3">
+            <span class="inline-block px-2 py-1 text-xs bg-green-100 text-green-700 rounded-full">Completed</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3">Mobile App UI</td>
+          <td class="px-4 py-3">NovaSoft</td>
+          <td class="px-4 py-3">2025-06-30</td>
+          <td class="px-4 py-3">$3,200</td>
+          <td class="px-4 py-3">
+            <span class="inline-block px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-full">Pending</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

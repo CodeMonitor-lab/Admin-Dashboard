@@ -1,0 +1,8 @@
+/* Custom reusable classes */
+.card {
+    @apply bg-white p-4 rounded shadow;
+}
+
+.hidden {
+    display: none;
+}

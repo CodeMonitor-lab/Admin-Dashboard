@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Page Layout -->
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <h1 class="text-2xl font-bold text-primary">Dashboard Overview</h1>
+      <div class="flex items-center gap-4">
+        <span class="text-sm font-bold  sm:inline">Admin User</span>
+        <i class='far fa-user-circle'></i>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 space-y-6">
+
+      <!-- Metric Cards -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Users -->
+        <div class="bg-white p-4 rounded-lg shadow flex items-center gap-4">
+          <div class="p-3 bg-blue-100 text-blue-600 rounded-full text-lg">📈</div>
+          <div>
+            <h3 class="text-xl font-semibold">1,245</h3>
+            <p class="text-sm text-gray-500">Users</p>
+          </div>
+        </div>
+        <!-- Revenue -->
+        <div class="bg-white p-4 rounded-lg shadow flex items-center gap-4">
+          <div class="p-3 bg-green-100 text-green-600 rounded-full text-lg">💰</div>
+          <div>
+            <h3 class="text-xl font-semibold">$58,200</h3>
+            <p class="text-sm text-gray-500">Revenue</p>
+          </div>
+        </div>
+        <!-- Goal Completion -->
+        <div class="bg-white p-4 rounded-lg shadow flex items-center gap-4">
+          <div class="p-3 bg-yellow-100 text-yellow-600 rounded-full text-lg">✅</div>
+          <div>
+            <h3 class="text-xl font-semibold">85%</h3>
+            <p class="text-sm text-gray-500">Goal Completion</p>
+          </div>
+        </div>
+        <!-- Notifications -->
+        <div class="bg-white p-4 rounded-lg shadow flex items-center gap-4">
+          <div class="p-3 bg-red-100 text-red-600 rounded-full text-lg">🔔</div>
+          <div>
+            <h3 class="text-xl font-semibold">12</h3>
+            <p class="text-sm text-gray-500">Notifications</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chart Section -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-lg font-semibold mb-4">User Growth</h2>
+        <div class="h-48 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-sm">
+          Chart will go here (Use Chart.js or ApexCharts)
+        </div>
+      </section>
+
+      <!-- Recent Activity Table -->
+      <section class="bg-white p-6 rounded-lg shadow overflow-x-auto">
+        <h2 class="text-lg font-semibold mb-4">Recent Activity</h2>
+        <table class="min-w-full text-left text-sm">
+          <thead>
+            <tr class="text-gray-600 border-b">
+              <th class="pb-2 pr-4">Date</th>
+              <th class="pb-2 pr-4">User</th>
+              <th class="pb-2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 pr-4">2025-05-28</td>
+              <td class="py-2 pr-4">Jane Doe</td>
+              <td class="py-2">Signed Up</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 pr-4">2025-05-27</td>
+              <td class="py-2 pr-4">John Smith</td>
+              <td class="py-2">Upgraded Plan</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4">2025-05-26</td>
+              <td class="py-2 pr-4">Sarah Lee</td>
+              <td class="py-2">Submitted Feedback</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

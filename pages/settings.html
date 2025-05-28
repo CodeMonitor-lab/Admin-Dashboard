@@ -1,0 +1,96 @@
+<section class="bg-white p-6 rounded-lg shadow mt-10">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 space-y-4 md:space-y-0">
+    <h2 class="text-xl font-semibold">User Management</h2>
+
+    <!-- Search and Filters -->
+    <div class="flex flex-wrap items-center gap-2">
+      <input type="text" placeholder="Search users..." class="border border-gray-300 rounded p-2 text-sm" />
+      <select class="border border-gray-300 rounded p-2 text-sm">
+        <option value="">All Roles</option>
+        <option value="admin">Admin</option>
+        <option value="editor">Editor</option>
+        <option value="viewer">Viewer</option>
+      </select>
+      <select class="border border-gray-300 rounded p-2 text-sm">
+        <option value="">All Statuses</option>
+        <option value="active">Active</option>
+        <option value="pending">Pending</option>
+        <option value="disabled">Disabled</option>
+      </select>
+      <button class="bg-green-600 text-white text-sm px-4 py-2 rounded hover:bg-green-700">Add User</button>
+    </div>
+  </div>
+
+  <!-- Bulk Actions -->
+  <div class="flex items-center mb-2 text-sm text-gray-600 space-x-4">
+    <label><input type="checkbox" class="mr-2"> Select All</label>
+    <button class="text-blue-600 hover:underline">Activate</button>
+    <button class="text-yellow-600 hover:underline">Suspend</button>
+    <button class="text-red-600 hover:underline">Delete</button>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 text-sm">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-2"><input type="checkbox" /></th>
+          <th class="px-4 py-2 text-left font-medium text-gray-500 uppercase">Name</th>
+          <th class="px-4 py-2 text-left font-medium text-gray-500 uppercase">Email</th>
+          <th class="px-4 py-2 text-left font-medium text-gray-500 uppercase">Role</th>
+          <th class="px-4 py-2 text-left font-medium text-gray-500 uppercase">Status</th>
+          <th class="px-4 py-2 text-right font-medium text-gray-500 uppercase">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <!-- User 1 -->
+        <tr>
+          <td class="px-4 py-2"><input type="checkbox" /></td>
+          <td class="px-4 py-2">John Doe</td>
+          <td class="px-4 py-2">john@example.com</td>
+          <td class="px-4 py-2">
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Admin</span>
+          </td>
+          <td class="px-4 py-2">
+            <span class="px-2 py-1 bg-green-200 text-green-800 rounded-full text-xs">Active</span>
+          </td>
+          <td class="px-4 py-2 text-right space-x-2">
+            <button class="text-blue-600 hover:text-blue-900">Edit</button>
+            <button class="text-red-600 hover:text-red-900">Delete</button>
+          </td>
+        </tr>
+
+        <!-- User 2 -->
+        <tr>
+          <td class="px-4 py-2"><input type="checkbox" /></td>
+          <td class="px-4 py-2">Jane Smith</td>
+          <td class="px-4 py-2">jane@example.com</td>
+          <td class="px-4 py-2">
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Editor</span>
+          </td>
+          <td class="px-4 py-2">
+            <span class="px-2 py-1 bg-yellow-200 text-yellow-800 rounded-full text-xs">Pending</span>
+          </td>
+          <td class="px-4 py-2 text-right space-x-2">
+            <button class="text-blue-600 hover:text-blue-900">Edit</button>
+            <button class="text-red-600 hover:text-red-900">Delete</button>
+          </td>
+        </tr>
+
+        <!-- Add more users here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="mt-4 flex justify-between items-center text-sm text-gray-600">
+    <span>Showing 1-10 of 50 users</span>
+    <div class="space-x-2">
+      <button class="px-3 py-1 border rounded hover:bg-gray-100">Prev</button>
+      <button class="px-3 py-1 border rounded bg-blue-600 text-white">1</button>
+      <button class="px-3 py-1 border rounded hover:bg-gray-100">2</button>
+      <button class="px-3 py-1 border rounded hover:bg-gray-100">3</button>
+      <button class="px-3 py-1 border rounded hover:bg-gray-100">Next</button>
+    </div>
+  </div>
+</section>

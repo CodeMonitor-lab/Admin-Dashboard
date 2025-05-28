@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freelance Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col text-gray-900">
+
+  <!-- Top Navbar -->
+  <header class="bg-blue-800 text-white p-4 flex justify-between items-center relative z-20">
+    <div class="flex items-center space-x-4">
+      <!-- Mobile Sidebar Toggle -->
+      <button id="sidebarToggle" aria-label="Toggle sidebar" class="md:hidden text-white hover:text-blue-300 focus:outline-none text-2xl">
+        ☰
+      </button>
+      <h1 class="text-xl font-bold">Freelance Admin</h1>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center space-x-4">
+      <!-- Search Toggle -->
+      <button id="toggleSearch" class="hover:bg-blue-700 px-2 py-1 rounded focus:outline-none" aria-label="Toggle search">
+        <i class="fas fa-search text-lg"></i>
+      </button>
+
+      <!-- Notifications -->
+      <div class="relative">
+        <button class="hover:bg-blue-700 px-2 py-1 rounded focus:outline-none" aria-label="Notifications">
+          <i class="fas fa-bell text-lg"></i>
+        </button>
+        <span class="absolute top-0 right-0 bg-red-500 rounded-full w-4 h-4 text-xs text-center text-white leading-tight">3</span>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center space-x-2 hover:bg-blue-700 px-3 py-1 rounded focus:outline-none" aria-label="Admin profile">
+            <i class='fas fa-user-secret text-xl text-green-200'></i>
+        </button>
+        <div class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded shadow-lg hidden group-hover:block z-30">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Notifications</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Box -->
+    <div id="searchBox" class="absolute top-full right-4 mt-2 w-64 bg-white text-gray-800 shadow-md rounded p-2 hidden">
+      <input type="text" placeholder="Search..." class="w-full p-2 border border-gray-300 rounded" />
+    </div>
+  </header>
+
+  <!-- Page Layout -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-blue-900 text-white w-64 p-6 space-y-4 absolute md:relative md:block transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10 h-full">
+      <nav class="flex flex-col space-y-3 font-semibold">
+        <a href="#dashboard.html" class="hover:text-blue-300">Dashboard</a>
+        <a href="#projects" class="hover:text-blue-300">Projects</a>
+        <a href="#clients" class="hover:text-blue-300">Clients</a>
+        <a href="#settings" class="hover:text-blue-300">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="content" class="flex-1 bg-gray-50 p-6 overflow-y-auto">
+      <h2 class="text-2xl font-bold mb-4">Welcome to your freelance admin panel</h2>
+      <p class="text-gray-600">Use the sidebar to navigate. This area will dynamically load content.</p>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const toggleSearch = document.getElementById('toggleSearch');
+    const searchBox = document.getElementById('searchBox');
+    let searchVisible = false;
+
+    toggleSearch.addEventListener('click', () => {
+      if (!searchVisible) {
+        searchBox.style.display = 'block';
+        gsap.fromTo(searchBox, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+      } else {
+        gsap.to(searchBox, {
+          opacity: 0,
+          y: -10,
+          duration: 0.2,
+          onComplete: () => (searchBox.style.display = 'none')
+        });
+      }
+      searchVisible = !searchVisible;
+    });
+
+    // Sidebar toggle for mobile
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+  </script>
+
+  <script src="/js/app.js"></script>
+
+</body>
+</html>
